@@ -1,9 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Quiz from './components/Quiz.js';
 import React from 'react';
-import Controller from './controller/controller.js';
 import Results from './components/Results';
 
 function App() {

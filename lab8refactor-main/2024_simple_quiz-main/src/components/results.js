@@ -2,8 +2,17 @@
 import React from 'react';
 import quizPageStyle from '../QuizPageStyle';
 
-
 const Results = ({ results }) => {
+  /*if (!results) {
+    return (
+      <div style={quizPageStyle}>
+        <h1>Quiz Results</h1>
+        <p>No results available. Please take the quiz first.</p>
+        <button onClick={() => window.location.href = '/'}>Take Quiz</button>
+      </div>
+    );
+  }*/
+
   return (
     <div style={quizPageStyle}>
       <h1>Quiz Results</h1>
@@ -12,6 +21,5 @@ const Results = ({ results }) => {
     </div>
   );
 }
-
 
 export default Results;

@@ -39,7 +39,15 @@ class QuizController {
 
     scoreAnswers(answers) {
         this.resetScore();
-
+        
+        for (const questionId in answers) {
+            if (answers[questionId] === true) {
+                this.incrementScore();
+            } else {
+                this.dontIncrementScore();
+            }
+        }
+        
         return { score: this.score, count: this.count };
     }
 }
