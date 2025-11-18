@@ -9,10 +9,10 @@ function Quiz({ onSubmit }) {
     const navigate = useNavigate();
 
     const handleAnswerSelect = (questionId, isCorrect) => {
-        setAnswers({
-            ...answers,
+        setAnswers(prevAnswers => ({
+            ...prevAnswers,
             [questionId]: isCorrect
-        });
+        }));
     };
 
     const handleSubmit = () => {
