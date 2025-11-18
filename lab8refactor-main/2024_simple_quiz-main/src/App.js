@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Quiz from './components/Quiz.js';
 import React from 'react';
-import Results from './components/Results';
+import Results from './components/results.js';
 
 function App() {
   const [quizResults, setQuizResults] = React.useState(null);

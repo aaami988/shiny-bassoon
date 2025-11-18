@@ -34,6 +34,7 @@ function Quiz({ onSubmit }) {
                                 <input
                                     type="radio"
                                     name={`question-${question.id}`}
+                                    checked={answers[question.id] === answer.isCorrect}
                                     onChange={() => handleAnswerSelect(question.id, answer.isCorrect)}
                                 />
                                 {answer.answer}
