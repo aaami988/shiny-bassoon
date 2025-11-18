@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Quiz from './components/Quiz.js';
-import React from 'react';
+import React, { useState } from 'react';
 import Results from './components/results.js';
 
 function App() {
-  const [quizResults, setQuizResults] = React.useState(null);
+  const [quizResults, setQuizResults] = useState(null);
 
   return (
     <BrowserRouter>
