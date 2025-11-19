@@ -1,10 +1,8 @@
 import React from 'react';
 import quizPageStyle from '../QuizPageStyle';
-
 import my_state from './my_state';
-
-import  my_questions from '../model/basic_questions.json';
-
+import my_questions from '../model/basic_questions.json';
+import { scoringController } from '../controllers/scoringController';
 
 class Quiz extends React.Component {
 
@@ -14,27 +12,28 @@ class Quiz extends React.Component {
     };
     
     incrementScore = () => {
+        const result = scoringController.incrementScore(this.state.score, this.state.count);
         this.setState({
-            score: this.state.score + 1
+            score: result.score,
+            count: result.count
         });
-        this.setState({
-            count: this.state.count + 1
-        });
-        alert("You are correct!"); // could be executed before the setStates are done!
+        alert(result.message);
     };
 
     dontIncrementScore = () => {
-       this.setState({
-            count: this.state.count + 1
+        const result = scoringController.dontIncrementScore(this.state.count);
+        this.setState({
+            count: result.count
         });
-        alert("Sorry - not correct");
+        alert(result.message);
     };
 
     handleSubmit = () => {
         my_state.my_score = this.state.score;
         my_state.my_count = this.state.count;
         
-        alert("Total score: " + this.state.score + "/" + this.state.count);
+        const finalScore = scoringController.calculateFinalScore(this.state.score, this.state.count);
+        alert(finalScore);
     }
     
     render() {
