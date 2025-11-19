@@ -17,4 +17,4 @@ export const scoringController = {
   calculateFinalScore: (score, count) => {
     return `Total score: ${score}/${count}`;
   }
-};
+}
