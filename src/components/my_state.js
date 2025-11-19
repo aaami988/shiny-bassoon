@@ -1,7 +1,12 @@
 import MyState from '../model/MyState';
 
-var my_state = new MyState();
+class MyState {
+    constructor() {
+        this.my_score = 0;
+        this.my_count = 0;
+    }
+    
+}
 
+export default MyState;
 
-
-export default my_state;
